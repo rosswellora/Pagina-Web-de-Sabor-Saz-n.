@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor & Sazón</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Sabor &amp; Sazón</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#menu">Menú</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+      </ul>
+    </nav>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Cambiar tema">
+      Modo oscuro
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-content">
+        <p class="eyebrow">Cocina artesanal y ambiente acogedor</p>
+        <h1>Sabores que hacen que cada comida se recuerde.</h1>
+        <p class="hero-text">
+          Descubre platillos preparados con ingredientes frescos, sazón casera y un toque gourmet para compartir en familia o con amigos.
+        </p>
+        <div class="hero-actions">
+          <a href="#reservas" class="btn primary">Reservar mesa</a>
+          <a href="#menu" class="btn secondary">Ver menú</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-image"></div>
+        <div class="card-info">
+          <span>Especial del día</span>
+          <strong>Pasta al estilo de la casa</strong>
+          <small>Con salsa de tomate, albahaca y queso parmesano.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="nosotros">
+      <div class="feature-item">
+        <span class="icon">🍽️</span>
+        <h3>Platos frescos</h3>
+        <p>Elaborados diariamente con ingredientes de calidad y sabores auténticos.</p>
+      </div>
+      <div class="feature-item">
+        <span class="icon">👨‍🍳</span>
+        <h3>Chef experto</h3>
+        <p>Una cocina creativa que combina tradición, técnica y pasión.</p>
+      </div>
+      <div class="feature-item">
+        <span class="icon">⏱️</span>
+        <h3>Atención rápida</h3>
+        <p>Servicio amable y eficiente para que disfrutes cada momento.</p>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="section-heading">
+        <p class="eyebrow">Nuestro menú</p>
+        <h2>Lo más pedido</h2>
+      </div>
+
+      <div class="menu-grid">
+        <article class="menu-card">
+          <div class="menu-image one"></div>
+          <div class="menu-content">
+            <h3>Risotto de hongos</h3>
+            <p>Crema suave, hongos salteados y queso pecorino.</p>
+            <div class="price-row">
+              <span>$24.00</span>
+              <button type="button">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="menu-image two"></div>
+          <div class="menu-content">
+            <h3>Filete a la parrilla</h3>
+            <p>Con papas doradas, vegetales y salsa de la casa.</p>
+            <div class="price-row">
+              <span>$32.00</span>
+              <button type="button">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="menu-card">
+          <div class="menu-image three"></div>
+          <div class="menu-content">
+            <h3>Ensalada de la temporada</h3>
+            <p>Mix de hojas, frutas frescas y aderezo cítrico.</p>
+            <div class="price-row">
+              <span>$18.00</span>
+              <button type="button">Agregar</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="promo" id="reservas">
+      <div>
+        <p class="eyebrow">Reserva ahora</p>
+        <h2>Disfruta una experiencia culinaria inolvidable.</h2>
+      </div>
+      <a href="#" class="btn primary">Hacer reserva</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Sabor &amp; Sazón</p>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const toggleButton = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'dark') {
+      body.classList.add('theme-dark');
+      toggleButton.textContent = 'Modo claro';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      const isDark = body.classList.toggle('theme-dark');
+      const theme = isDark ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+      toggleButton.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
+    });
+  </script>
+</body>
+</html>
